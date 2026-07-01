@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeskDesign3D</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>DeskDesign3D Store</h1>
-  <p>Your store is live 🚀</p>
+
+<header>
+  <h1>DeskDesign3D</h1>
+  <p>3D printed desk accessories</p>
+</header>
+
+<div class="container">
+
+  <h2>Products</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Desk Cable Organizer</h3>
+      <p>Keeps your cables clean and tidy.</p>
+      <div class="price">€1.00</div>
+      <button>Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Headphone Stand</h3>
+      <p>Simple stand for your headphones.</p>
+      <div class="price">€1.00</div>
+      <button>Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Pen Holder</h3>
+      <p>Minimal desk pen organizer.</p>
+      <div class="price">€1.00</div>
+      <button>Buy</button>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
