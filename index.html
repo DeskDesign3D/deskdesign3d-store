@@ -113,7 +113,11 @@ let cart = [];
 let total = 0;
 
 function addToCart(item) {
-  cart.push(item);
+  cart.push({
+    name: item,
+    price: 1
+  });
+
   total += 1;
   updateCart();
 }
@@ -124,11 +128,23 @@ function updateCart() {
 
   cart.forEach((item) => {
     const li = document.createElement("li");
-    li.textContent = item + " - €1";
+    li.textContent = `${item.name} - €${item.price}`;
     list.appendChild(li);
   });
 
   document.getElementById("total").innerText = total;
+}
+
+// 🔥 BELANGRIJK: echte totaalberekening voor Supabase checkout
+function getTotalPrice() {
+  return cart.reduce((sum, item) => sum + item.price, 0);
+}
+
+// 🧾 CLEAR CART na bestelling
+function clearCart() {
+  cart = [];
+  total = 0;
+  updateCart();
 }
 </script>
 
