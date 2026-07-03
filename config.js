@@ -1,4 +1,4 @@
-const SUPABASE_URL = const SUPABASE_URL = https:"//gbrzudblpuhioxblenof.supabase.co/rest/v1/";;
+const SUPABASE_URL = const SUPABASE_URL = const SUPABASE_URL = "https://gbrzudblpuhioxblenof.supabase.co";
 
 const SUPABASE_KEY = "sb_publishable_OeMYh5209JXIyrhvwbA7Rw_U8Q35xxX";
 
