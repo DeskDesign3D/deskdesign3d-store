@@ -9,6 +9,29 @@ const DOM = {
     checkoutBtn: null,
 };
 
+// Wait for Supabase to be initialized
+function waitForSupabase() {
+    return new Promise((resolve) => {
+        if (typeof supabase !== 'undefined' && supabase.from) {
+            resolve();
+        } else {
+            // Check every 50ms for up to 5 seconds
+            let attempts = 0;
+            const interval = setInterval(() => {
+                attempts++;
+                if (typeof supabase !== 'undefined' && supabase.from) {
+                    clearInterval(interval);
+                    resolve();
+                } else if (attempts > 100) {
+                    clearInterval(interval);
+                    console.error('Supabase failed to initialize');
+                    resolve(); // Resolve anyway to prevent hanging
+                }
+            }, 50);
+        }
+    });
+}
+
 // Initialize DOM cache
 function initCartDOM() {
     DOM.productGrid = document.getElementById("productGrid");
@@ -56,6 +79,13 @@ function escapeHtml(text) {
 async function loadProducts() {
     if (!DOM.productGrid) {
         DOM.productGrid = document.getElementById("productGrid");
+    }
+
+    // Ensure Supabase is initialized
+    if (typeof supabase === 'undefined' || !supabase.from) {
+        DOM.productGrid.innerHTML = `<p class="error">Error: Supabase client not initialized</p>`;
+        console.error("Supabase not initialized");
+        return;
     }
 
     try {
@@ -195,6 +225,10 @@ async function checkout() {
     }
 
     try {
+        if (typeof supabase === 'undefined' || !supabase.from) {
+            throw new Error('Supabase client not initialized');
+        }
+
         const { error } = await supabase
             .from("orders")
             .insert([
@@ -230,7 +264,11 @@ async function checkout() {
 }
 
 // Initialize on page load
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    // Wait for Supabase to be initialized
+    await waitForSupabase();
+    
+    // Then initialize the app
     initCartDOM();
     loadCartFromStorage();
     loadProducts();
