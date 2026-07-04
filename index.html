@@ -41,7 +41,7 @@
             €<span id="total">0.00</span>
         </h3>
 
-        <button onclick="location.href='checkout.html'">
+        <button id="checkoutBtn" onclick="checkout()">
             Checkout
         </button>
 
@@ -52,6 +52,51 @@
 <footer>
     <p>© 2026 DeskDesign3D</p>
 </footer>
+
+<style>
+    .error {
+        color: #c00;
+        padding: 15px;
+        background: #fee;
+        border-radius: 8px;
+        margin: 15px 0;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .remove-btn {
+        background: #d00;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    .remove-btn:hover {
+        background: #b00;
+    }
+
+    #checkoutBtn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+</style>
 
 <script src="app.js"></script>
 
