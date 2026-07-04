@@ -1,3 +1,26 @@
+// Wait for Supabase to be initialized
+function waitForSupabase() {
+    return new Promise((resolve) => {
+        if (typeof supabase !== 'undefined' && supabase.auth) {
+            resolve();
+        } else {
+            // Check every 50ms for up to 5 seconds
+            let attempts = 0;
+            const interval = setInterval(() => {
+                attempts++;
+                if (typeof supabase !== 'undefined' && supabase.auth) {
+                    clearInterval(interval);
+                    resolve();
+                } else if (attempts > 100) {
+                    clearInterval(interval);
+                    console.error('Supabase failed to initialize');
+                    resolve(); // Resolve anyway to prevent hanging
+                }
+            }, 50);
+        }
+    });
+}
+
 // Cache DOM elements to avoid repeated queries
 const DOM = {
     registerEmail: null,
@@ -22,8 +45,11 @@ function initDOM() {
     DOM.messageContainer = document.getElementById("messageContainer");
 }
 
-// Initialize DOM when page loads
-document.addEventListener("DOMContentLoaded", initDOM);
+// Initialize DOM when page loads (after Supabase is ready)
+document.addEventListener("DOMContentLoaded", async () => {
+    await waitForSupabase();
+    initDOM();
+});
 
 // Show feedback message (non-blocking)
 function showMessage(message, type = "info") {
@@ -45,7 +71,9 @@ function showMessage(message, type = "info") {
 
     // Auto-remove after 5 seconds
     setTimeout(() => {
-        messageEl.remove();
+        if (messageEl.parentNode) {
+            messageEl.remove();
+        }
     }, 5000);
 }
 
@@ -80,6 +108,13 @@ async function register() {
     
     if (!DOM.registerEmail || !DOM.registerPassword) {
         console.error("Register form elements not found");
+        showMessage("Form elements not found. Please refresh the page.", "error");
+        return;
+    }
+
+    if (typeof supabase === 'undefined' || !supabase.auth) {
+        showMessage("Supabase client not initialized. Please refresh the page.", "error");
+        console.error("Supabase not initialized");
         return;
     }
 
@@ -137,6 +172,13 @@ async function login() {
     
     if (!DOM.loginEmail || !DOM.loginPassword) {
         console.error("Login form elements not found");
+        showMessage("Form elements not found. Please refresh the page.", "error");
+        return;
+    }
+
+    if (typeof supabase === 'undefined' || !supabase.auth) {
+        showMessage("Supabase client not initialized. Please refresh the page.", "error");
+        console.error("Supabase not initialized");
         return;
     }
 
@@ -200,6 +242,12 @@ async function login() {
 async function forgotPassword() {
     clearMessage();
     
+    if (typeof supabase === 'undefined' || !supabase.auth) {
+        showMessage("Supabase client not initialized. Please refresh the page.", "error");
+        console.error("Supabase not initialized");
+        return;
+    }
+
     // Use modal dialog instead of blocking prompt
     const email = prompt("Enter your email address:");
 
