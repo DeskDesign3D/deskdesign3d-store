@@ -1,1 +1,17 @@
-
+{
+  "name": "deskdesign3d",
+  "version": "1.0.0",
+  "description": "DeskDesign3D Production Webshop",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "3d",
+    "desk",
+    "supabase",
+    "shop"
+  ],
+  "license": "MIT"
+}
