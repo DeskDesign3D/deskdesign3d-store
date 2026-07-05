@@ -1,0 +1,260 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #64748b;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #ea580c;
+
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --border: #e2e8f0;
+
+    --text: #0f172a;
+    --text-light: #475569;
+
+    --radius: 14px;
+    --radius-sm: 10px;
+
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+
+    --container: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.badge-success {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--success);
+}
+
+.badge-warning {
+    background: rgba(234, 88, 12, 0.12);
+    color: var(--warning);
+}
+
+.badge-danger {
+    background: rgba(220, 38, 38, 0.12);
+    color: var(--danger);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-light);
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.hidden {
+    display: none !important;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
