@@ -1,1 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Products | DeskDesign3D
+
+    </title>
+
+    <meta
+        name="description"
+        content="Browse all DeskDesign3D products.">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/main.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/responsive.css">
+
+</head>
+
+<body data-page="products">
+
+<header class="site-header">
+
+    <div class="container">
+
+        <a
+            href="index.html"
+            class="logo">
+
+            <img
+                src="assets/images/logo/logo.png"
+                alt="DeskDesign3D">
+
+        </a>
+
+        <nav class="desktop-nav">
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+            <a
+                href="products.html"
+                class="active">
+
+                Products
+
+            </a>
+
+            <a href="cart.html">
+
+                Cart
+
+            </a>
+
+            <a
+                href="login.html"
+                id="loginButton">
+
+                Login
+
+            </a>
+
+            <button
+                id="accountButton"
+                class="hidden">
+
+                Account
+
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="page-banner">
+
+<div class="container">
+
+<h1>
+
+Products
+
+</h1>
+
+<p>
+
+Premium 3D printed desk accessories.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="shop-layout">
+
+<aside class="filters">
+
+<h2>
+
+Filters
+
+</h2>
+
+<div class="form-group">
+
+<label>
+
+Search
+
+</label>
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="Search products...">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Category
+
+</label>
+
+<select id="categoryFilter">
+
+<option value="">
+
+All Categories
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Sort By
+
+</label>
+
+<select id="sortProducts">
+
+<option value="newest">
+
+Newest
+
+</option>
+
+<option value="price-low">
+
+Price: Low to High
+
+</option>
+
+<option value="price-high">
+
+Price: High to Low
+
+</option>
+
+<option value="name">
+
+Name
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Maximum Price
+
+</label>
+
+<input
+
+type="range"
+
+id="priceFilter"
+
+min="0"
+
+max="500"
+
+value="500">
+
+<span id="priceValue">
+
+€500
+
+</span>
+
+</div>
+
+<button
+
+id="clearFilters"
+
+class="secondary-button">
+
+Clear Filters
+
+</button>
+
+</aside>
+
+<section class="products-content">
+
+<div class="products-toolbar">
+
+<p>
+
+<span id="productCount">
+
+0
+
+</span>
+
+products found
+
+</p>
+
+</div>
+
+<div
+
+id="productsGrid"
+
+class="product-grid">
+
+<!-- Loaded from Supabase -->
+
+</div>
+
+<div
+
+id="noProducts"
+
+class="hidden">
+
+<h2>
+
+No products found
+
+</h2>
+
+<p>
+
+Try changing your filters.
+
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+</section>
+  <section class="newsletter">
+
+    <div class="container">
+
+        <div class="newsletter-box">
+
+            <h2>
+
+                Never Miss New Products
+
+            </h2>
+
+            <p>
+
+                Subscribe to receive updates about
+                new desk accessories and exclusive
+                offers.
+
+            </p>
+
+            <form id="newsletterForm">
+
+                <input
+
+                    type="email"
+
+                    placeholder="Email address"
+
+                    required>
+
+                <button
+
+                    type="submit"
+
+                    class="primary-button">
+
+                    Subscribe
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <h3>
+
+                DeskDesign3D
+
+            </h3>
+
+            <p>
+
+                Premium 3D printed desk accessories.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>
+
+                Shop
+
+            </h3>
+
+            <a href="products.html">
+
+                Products
+
+            </a>
+
+            <br>
+
+            <a href="cart.html">
+
+                Cart
+
+            </a>
+
+            <br>
+
+            <a href="checkout.html">
+
+                Checkout
+
+            </a>
+
+        </div>
+
+        <div>
+
+            <h3>
+
+                Account
+
+            </h3>
+
+            <a href="login.html">
+
+                Login
+
+            </a>
+
+            <br>
+
+            <a href="account.html">
+
+                My Account
+
+            </a>
+
+            <br>
+
+            <a href="orders.html">
+
+                Orders
+
+            </a>
+
+        </div>
+
+        <div>
+
+            <h3>
+
+                Support
+
+            </h3>
+
+            <a href="#">
+
+                Contact
+
+            </a>
+
+            <br>
+
+            <a href="#">
+
+                Privacy Policy
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script
+
+type="module"
+
+src="assets/js/app.js">
+
+</script>
+
+<script
+
+type="module">
+
+import { supabase } from "./assets/js/services/supabase.js";
+
+const grid = document.getElementById("productsGrid");
+
+const count = document.getElementById("productCount");
+
+const categoryFilter = document.getElementById("categoryFilter");
+
+const searchInput = document.getElementById("searchInput");
+
+const sortProducts = document.getElementById("sortProducts");
+
+const priceFilter = document.getElementById("priceFilter");
+
+const priceValue = document.getElementById("priceValue");
+
+const noProducts = document.getElementById("noProducts");
+
+async function loadCategories(){
+
+    const {
+
+        data
+
+    } = await supabase
+
+        .from("categories")
+
+        .select("*")
+
+        .order("name");
+
+    if(!data) return;
+
+    data.forEach(category=>{
+
+        categoryFilter.innerHTML += `
+
+        <option value="${category.id}">
+
+            ${category.name}
+
+        </option>
+
+        `;
+
+    });
+
+}
+
+async function loadProducts(){
+
+    let query = supabase
+
+        .from("products")
+
+        .select("*")
+
+        .eq("active",true);
+
+    if(categoryFilter.value){
+
+        query = query.eq(
+
+            "category_id",
+
+            categoryFilter.value
+
+        );
+
+    }
+
+    if(searchInput.value){
+
+        query = query.ilike(
+
+            "name",
+
+            `%${searchInput.value}%`
+
+        );
+
+    }
+
+    const {
+
+        data
+
+    } = await query;
+
+    grid.innerHTML="";
+
+    if(!data || data.length===0){
+
+        noProducts.classList.remove("hidden");
+
+        count.textContent=0;
+
+        return;
+
+    }
+
+    noProducts.classList.add("hidden");
+
+    let products=[...data];
+
+    products=products.filter(
+
+        p=>Number(p.price)<=Number(priceFilter.value)
+
+    );
+
+    switch(sortProducts.value){
+
+        case"price-low":
+
+            products.sort((a,b)=>a.price-b.price);
+
+            break;
+
+        case"price-high":
+
+            products.sort((a,b)=>b.price-a.price);
+
+            break;
+
+        case"name":
+
+            products.sort((a,b)=>
+
+                a.name.localeCompare(b.name)
+
+            );
+
+            break;
+
+    }
+
+    count.textContent=products.length;
+
+    products.forEach(product=>{
+
+        grid.innerHTML +=`
+
+<div class="product-card">
+
+<img
+
+src="assets/images/placeholder.png"
+
+alt="${product.name}">
+
+<h3>
+
+${product.name}
+
+</h3>
+
+<p class="price">
+
+€${Number(product.price).toFixed(2)}
+
+</p>
+
+<a
+
+href="product.html?id=${product.id}"
+
+class="primary-button">
+
+View Product
+
+</a>
+
+</div>
+
+`;
+
+    });
+
+}
+
+priceFilter.addEventListener("input",()=>{
+
+    priceValue.textContent=`€${priceFilter.value}`;
+
+    loadProducts();
+
+});
+
+categoryFilter.addEventListener(
+
+"change",
+
+loadProducts
+
+);
+
+searchInput.addEventListener(
+
+"input",
+
+loadProducts
+
+);
+
+sortProducts.addEventListener(
+
+"change",
+
+loadProducts
+
+);
+
+document
+
+.getElementById("clearFilters")
+
+.addEventListener("click",()=>{
+
+searchInput.value="";
+
+categoryFilter.value="";
+
+sortProducts.value="newest";
+
+priceFilter.value=500;
+
+priceValue.textContent="€500";
+
+loadProducts();
+
+});
+
+await loadCategories();
+
+await loadProducts();
+
+</script>
+
+</body>
+
+</html>
