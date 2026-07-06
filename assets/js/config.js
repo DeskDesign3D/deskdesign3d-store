@@ -1,10 +1,10 @@
 export const CONFIG = {
 
     SUPABASE_URL:
-        "YOUR_SUPABASE_URL",
+        "https://gbrzudblpuhioxblenof.supabase.co",
 
     SUPABASE_ANON_KEY:
-        "YOUR_SUPABASE_ANON_KEY",
+        "sb_publishable_OeMYh5209JXIyrhvwbA7Rw_U8Q35xxX",
 
     STORAGE_BUCKET:
         "Product_images",
