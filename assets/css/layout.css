@@ -10,14 +10,18 @@ header {
 }
 
 .desktop-nav {
-    height: 20%;
-    min-height: 2cm;
+    min-height: 15%;
+
 }
 
 header nav {
     display: flex;
     align-items: center;
+}
+
+header nav h3 {
     gap: 3rem;
+    font-size: 2rem;
 }
 
 header nav a {
