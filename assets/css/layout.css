@@ -10,7 +10,7 @@ header {
 }
 
 .desktop-nav {
-    min-height: 15%;
+    min-height: 5rem;
 
 }
 
@@ -19,9 +19,9 @@ header nav {
     align-items: center;
 }
 
-header nav h3 {
-    gap: 3rem;
+header nav h3 a {
     font-size: 2rem;
+    gap: 3rem;
 }
 
 header nav a {
