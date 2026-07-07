@@ -58,10 +58,11 @@ select {
 }
 
 .container {
-    width: min(var(--container), calc(100% -  0rem));
+    width: 100% ;
+    
     margin-inline: auto;
 }
-
+//min(var(--container), calc(100% - 2rem));
 .section {
     padding: 4rem 0;
 }
