@@ -12,13 +12,13 @@ header {
 header nav {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 header nav a {
     font-weight: 600;
     color: var(--text-light);
-    transition: color 0.2s ease;
+    transition: color 0.35s ease;
 }
 
 header nav a:hover {
