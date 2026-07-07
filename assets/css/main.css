@@ -62,7 +62,7 @@ select {
     
     margin-inline: auto;
 }
-//min(var(--container), calc(100% - 2rem));
+
 .section {
     padding: 4rem 0;
 }
