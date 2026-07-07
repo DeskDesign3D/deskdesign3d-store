@@ -1,17 +1,19 @@
 {
   "name": "deskdesign3d",
   "version": "1.0.0",
-  "description": "DeskDesign3D Production Webshop",
+  "description": "DeskDesign3D webshop built with HTML, CSS, JavaScript and Supabase",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "npx serve .",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "build": "echo \"Static project\"",
+    "deploy": "vercel --prod"
   },
-  "keywords": [
-    "3d",
-    "desk",
-    "supabase",
-    "shop"
-  ],
-  "license": "MIT"
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
 }
