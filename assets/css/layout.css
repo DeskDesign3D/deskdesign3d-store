@@ -12,6 +12,7 @@ header {
 header nav {
     display: flex;
     align-items: center;
+    gap: 3rem;
 }
 
 header nav a {
