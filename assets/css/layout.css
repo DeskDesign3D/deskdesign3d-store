@@ -1,4 +1,4 @@
-.header {
+.site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -15,10 +15,6 @@
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
-}
-
-.logo img {
-    width: 100%;
 }
 
 .header nav {
