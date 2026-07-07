@@ -1,14 +1,11 @@
 {
   "name": "deskdesign3d",
   "version": "1.0.0",
-  "description": "DeskDesign3D webshop built with HTML, CSS, JavaScript and Supabase",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx serve .",
-    "start": "npx serve .",
-    "build": "echo \"Static project\"",
-    "deploy": "vercel --prod"
+    "dev": "serve .",
+    "start": "serve ."
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0"
