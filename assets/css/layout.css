@@ -9,6 +9,11 @@ header {
     justify-content: space-between;
 }
 
+.desktop-nav {
+    height: 20%;
+    min-height: 2cm;
+}
+
 header nav {
     display: flex;
     align-items: center;
