@@ -58,8 +58,7 @@ select {
 }
 
 .container {
-    width: 100% ;
-    
+    width: min(var(--container), calc(100% - 2rem));
     margin-inline: auto;
 }
 

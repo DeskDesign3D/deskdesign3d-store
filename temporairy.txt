@@ -1,1 +1,0 @@
-//min(var(--container), calc(100% - 2rem));
