@@ -1,59 +1,105 @@
-const page=document.body.dataset.page;
+export function navigate(url) {
 
-switch(page){
+    if (!url) return;
 
-    case "home":
-
-        console.log("Home");
-
-    break;
-
-    case "products":
-
-        console.log("Products");
-
-    break;
-
-    case "product":
-
-        console.log("Product");
-
-    break;
-
-    case "cart":
-
-        console.log("Cart");
-
-    break;
-
-    case "checkout":
-
-        console.log("Checkout");
-
-    break;
-
-    case "login":
-
-        console.log("Login");
-
-    break;
-
-    case "account":
-
-        console.log("Account");
-
-    break;
-
-    case "orders":
-
-        console.log("Orders");
-
-    break;
-
-    case "admin":
-
-        console.log("Admin");
-
-    break;
+    window.location.href = url;
 
 }
+
+export function redirect(url) {
+
+    window.location.replace(url);
+
+}
+
+export function getQuery(name) {
+
+    const params = new URLSearchParams(
+
+        window.location.search
+
+    );
+
+    return params.get(name);
+
+}
+
+export function setQuery(name, value) {
+
+    const params = new URLSearchParams(
+
+        window.location.search
+
+    );
+
+    if (value === null || value === "") {
+
+        params.delete(name);
+
+    } else {
+
+        params.set(name, value);
+
+    }
+
+    history.replaceState(
+
+        {},
+
+        "",
+
+        `${window.location.pathname}?${params}`
+
+    );
+
+}
+
+export function currentPage() {
+
+    return window.location.pathname
+
+        .split("/")
+
+        .pop()
+
+        .replace(".html", "");
+
+}
+
+export function isPage(page) {
+
+    return currentPage() === page;
+
+}
+
+export function goBack() {
+
+    window.history.back();
+
+}
+
+export function reload() {
+
+    window.location.reload();
+
+}
+
+window.router = {
+
+    navigate,
+
+    redirect,
+
+    getQuery,
+
+    setQuery,
+
+    currentPage,
+
+    isPage,
+
+    goBack,
+
+    reload
+
+};
