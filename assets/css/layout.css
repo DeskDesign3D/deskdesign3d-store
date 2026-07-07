@@ -9,16 +9,9 @@ header {
     justify-content: space-between;
 }
 
-.2logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary);
-}
-
 header nav {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
 }
 
 header nav a {
