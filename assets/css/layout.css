@@ -7,6 +7,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 20%;
 }
 
 header nav {
@@ -19,6 +20,7 @@ header nav a {
     font-weight: 600;
     color: var(--text-light);
     transition: color 0.35s ease;
+    height: 2cm;
 }
 
 header nav a:hover {
