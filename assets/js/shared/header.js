@@ -1,53 +1,92 @@
-export function createHeader(){
-
+export function createHeader() {
     return `
-
-<header class="header">
-
-<div class="logo">
-
-<a href="index.html">
-
-DeskDesign3D
-
-</a>
-
+<div id="loading-overlay">
+    <div class="loader"></div>
 </div>
 
-<nav>
-
-<a href="products.html">
-
-Products
-
+<a href="index.html" class="logo">
+    <img src="assets/images/logo/logo.png" alt="DeskDesign3D">
 </a>
 
-<a href="cart.html">
+<header class="header">
+    <div class="container">
 
-Cart
+        <nav class="desktop-nav">
 
-</a>
+            <h3>
 
-<a href="login.html"
+                <a href="index.html">
+                    Home
+                </a>
 
-id="loginButton">
+                <a href="products.html">
+                    Products
+                </a>
 
-Login
+                <a href="#">
+                    Categories
+                </a>
 
-</a>
+                <a href="#">
+                    About
+                </a>
 
-</nav>
+                <a href="#">
+                    Contact
+                </a>
 
+            </h3>
+
+            <div class="header-actions" style="margin-left:auto;">
+
+                <button
+                    id="searchButton"
+                    class="icon-button"
+                    style="width:5rem; gap:2rem;">
+
+                    🔍
+
+                </button>
+
+                <a
+                    href="cart.html"
+                    class="icon-button"
+                    style="gap:2rem;">
+
+                    🛒
+
+                    <span id="cartCount">
+                        0
+                    </span>
+
+                </a>
+
+                <a
+                    href="login.html"
+                    id="loginButton"
+                    class="primary-button">
+
+                    Login
+
+                </a>
+
+                <button
+                    id="accountButton"
+                    class="primary-button hidden">
+
+                    Account
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
 </header>
-
 `;
-
 }
 
-document.body.insertAdjacentHTML(
-
-"afterbegin",
-
-createHeader()
-
-);
+export function loadHeader() {
+    document.body.insertAdjacentHTML("afterbegin", createHeader());
+}

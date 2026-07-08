@@ -1,1 +1,126 @@
-DeskDesign3D repository structure placeholder.
+DeskDesign3D repository structure placeholder.```text
+DeskDesign3D/
+│
+├── Project Structure/
+│   └── Repository Structure.txt
+│
+├── .env.example
+├── .gitignore
+├── package.json
+├── vercel.json
+├── README.md
+│
+├── index.html
+├── products.html
+├── product.html
+├── cart.html
+├── checkout.html
+├── login.html
+├── account.html
+├── orders.html
+├── admin.html
+├── 404.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── main.css
+│   │   ├── layout.css
+│   │   ├── components.css
+│   │   ├── auth.css
+│   │   ├── admin.css
+│   │   ├── cart.css
+│   │   ├── checkout.css
+│   │   └── responsive.css
+│   │
+│   ├── js/
+│   │   ├── config.js
+│   │   ├── app.js
+│   │   ├── router.js
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── auth.js
+│   │   │   ├── login.js
+│   │   │   ├── signup.js
+│   │   │   ├── reset-password.js
+│   │   │   └── session.js
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── admin.js
+│   │   │   ├── products.js
+│   │   │   ├── categories.js
+│   │   │   ├── orders.js
+│   │   │   ├── customers.js
+│   │   │   └── dashboard.js
+│   │   │
+│   │   ├── cart/
+│   │   │   ├── cart.js
+│   │   │   └── checkout.js
+│   │   │
+│   │   ├── products/
+│   │   │   ├── products.js
+│   │   │   ├── product.js
+│   │   │   ├── search.js
+│   │   │   ├── filters.js
+│   │   │   ├── reviews.js
+│   │   │   └── favorites.js
+│   │   │
+│   │   ├── account/
+│   │   │   ├── account.js
+│   │   │   ├── profile.js
+│   │   │   └── addresses.js
+│   │   │
+│   │   ├── orders/
+│   │   │   └── orders.js
+│   │   │
+│   │   ├── storage/
+│   │   │   └── upload.js
+│   │   │
+│   │   ├── services/
+│   │   │   ├── supabase.js
+│   │   │   ├── product-service.js
+│   │   │   ├── cart-service.js
+│   │   │   ├── order-service.js
+│   │   │   ├── account-service.js
+│   │   │   └── admin-service.js
+│   │   │
+│   │   ├── shared/
+│   │   │   ├── header.js
+│   │   │   ├── footer.js
+│   │   │   ├── sidebar.js
+│   │   │   ├── modal.js
+│   │   │   └── loader.js
+│   │   │
+│   │   ├── ui/
+│   │   │   ├── notifications.js
+│   │   │   ├── pagination.js
+│   │   │   └── validation.js
+│   │   │
+│   │   └── utils/
+│   │       ├── helpers.js
+│   │       ├── constants.js
+│   │       └── formatter.js
+│   │
+│   ├── images/
+│   │   ├── logo/
+│   │   ├── banners/
+│   │   ├── products/
+│   │   └── placeholders/
+│   │
+│   └── icons/
+│
+├── supabase/
+│   ├── schema.sql
+│   ├── policies.sql
+│   ├── storage.sql
+│   ├── functions.sql
+│   └── seed.sql
+│
+├── docs/
+│   ├── deployment.md
+│   ├── database.md
+│   └── api.md
+│
+└── scripts/
+    ├── setup.js
+    └── seed.js
+```

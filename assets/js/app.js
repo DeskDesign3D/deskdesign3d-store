@@ -1,3 +1,7 @@
+import { loadHeader } from "./shared/header.js";
+
+loadHeader();
+
 import { supabase } from "./services/supabase.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
