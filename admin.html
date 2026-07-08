@@ -36,51 +36,100 @@ href="assets/css/responsive.css">
 
 <body data-page="admin">
 
-<header class="site-header">
+<div id="loading-overlay">
 
-<div class="container">
+    <div class="loader"></div>
 
+</div>
 <a
 href="index.html"
 class="logo">
 
-<img
-src="assets/images/logo/logo.png"
-alt="DeskDesign3D">
+    <img
+    src="assets/images/logo/logo.png"
+    alt="DeskDesign3D">
 
 </a>
+<header class="header">
 
-<nav class="desktop-nav">
+    <div
+    class="container">
 
-<a href="index.html">
+        
 
-Home
+        <nav class="desktop-nav">
+            <h3>
+                <a href="index.html">
+                    Home
+                </a>
 
-</a>
+                <a href="products.html">
+                    Products
+                </a>
 
-<a
-href="admin.html"
-class="active">
+                <a href="#">
+                    Categories
+                </a>
 
-Admin
+                <a href="#">
+                    About
+                </a>
 
-</a>
+                <a href="#">
+                    Contact
+                </a>
+            </h3>
+            <div class="header-actions"
+            style="margin-left: auto;">
 
-<a href="products.html">
+            <button
+                id="searchButton"
+                class="icon-button" 
+                style="width: 5rem; gap: 2rem;">
 
-Products
+                🔍
 
-</a>
+            </button>
 
-<a href="orders.html">
+            <a
+                href="cart.html"
+                class="icon-button"
+                style="gap: 2rem;">
 
-Orders
+                🛒
 
-</a>
+                <span
+                    id="cartCount">
 
-</nav>
+                    0
 
-</div>
+                </span>
+
+            </a>
+
+            <a
+                href="login.html"
+                id="loginButton"
+                class="primary-button">
+
+                Login
+
+            </a>
+
+            <button
+                id="accountButton"
+                class="primary-button hidden">
+
+                Account
+
+            </button>
+
+        </div>
+        </nav>
+
+        
+
+    </div>
 
 </header>
 

@@ -62,7 +62,7 @@ footer {
     padding: 1.5rem;
 }
 
-.accountSidebar.open {
+#accountSidebar.open {
     right: 0;
 }
 
