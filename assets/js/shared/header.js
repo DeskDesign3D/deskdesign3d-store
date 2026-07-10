@@ -84,6 +84,54 @@ export function createHeader() {
 
     </div>
 </header>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<aside id="accountSidebar">
+
+    <button id="closeSidebar">
+
+        ✕
+
+    </button>
+
+    <h2>
+
+        My Account
+
+    </h2>
+
+    <a href="account.html">
+
+        Profile
+
+    </a>
+
+    <a href="orders.html">
+
+        Orders
+
+    </a>
+
+    <a href="wishlist.html">
+
+        Wishlist
+
+    </a>
+
+    <a href="settings.html">
+
+        Settings
+
+    </a>
+
+    <button id="logoutButton">
+
+        Logout
+
+    </button>
+
+</aside>
 `;
 }
 

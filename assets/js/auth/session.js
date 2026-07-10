@@ -1,174 +1,100 @@
-import { supabase } from "../services/supabase.js";
-import { logout } from "./auth.js";
-
-const loginButton = document.getElementById("loginButton");
-const accountButton = document.getElementById("accountButton");
-const logoutButton = document.getElementById("logoutButton");
-
-const userName = document.getElementById("userName");
-const userEmail = document.getElementById("userEmail");
-
-const sidebar = document.getElementById("accountSidebar");
-const closeSidebar = document.getElementById("closeSidebar");
-
-async function loadProfile(userId) {
-
-    const {
-
-        data,
-
-        error
-
-    } = await supabase
-
-        .from("profiles")
-
-        .select("*")
-
-        .eq("id", userId)
-
-        .single();
-
-    if (error || !data) {
-
-        return;
-
-    }
-
-    if (userName) {
-
-        userName.textContent =
-
-            `${data.first_name ?? ""} ${data.last_name ?? ""}`.trim()
-
-            ||
-
-            "Customer";
-
-    }
-
-    if (userEmail) {
-
-        userEmail.textContent =
-
-            data.email;
-
-    }
-
-}
+import { supabase } from "./auth.js";
 
 async function updateSession() {
 
     const {
-
-        data: {
-
-            session
-
-        }
-
+        data: { session }
     } = await supabase.auth.getSession();
 
-    if (!session) {
+    const loginButton = document.getElementById("loginButton");
+    const accountButton = document.getElementById("accountButton");
 
-        if (loginButton) {
+    if (!loginButton || !accountButton) return;
 
-            loginButton.classList.remove("hidden");
-
-        }
-
-        if (accountButton) {
-
-            accountButton.classList.add("hidden");
-
-        }
-
-        return;
-
-    }
-
-    if (loginButton) {
+    if (session) {
 
         loginButton.classList.add("hidden");
-
-    }
-
-    if (accountButton) {
-
         accountButton.classList.remove("hidden");
 
+    } else {
+
+        loginButton.classList.remove("hidden");
+        accountButton.classList.add("hidden");
+
     }
 
-    await loadProfile(
-
-        session.user.id
-
-    );
-
 }
 
-if (accountButton && sidebar) {
+function setupSidebar() {
 
-    accountButton.addEventListener(
-
-        "click",
-
-        () => {
-
-            sidebar.classList.add("open");
-
-        }
-
-    );
-
-}
-
-if (closeSidebar && sidebar) {
-
-    closeSidebar.addEventListener(
-
-        "click",
-
-        () => {
-
-            sidebar.classList.remove("open");
-
-        }
-
-    );
-
-}
+    const logoutButton = document.getElementById("logoutButton");
 
 if (logoutButton) {
 
-    logoutButton.addEventListener(
+    logoutButton.onclick = async () => {
 
-        "click",
+        await supabase.auth.signOut();
 
-        logout
+        window.location.href = "index.html";
 
-    );
+    };
 
 }
 
-supabase.auth.onAuthStateChange(
+    const accountButton = document.getElementById("accountButton");
+    const sidebar = document.getElementById("accountSidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+    const closeButton = document.getElementById("closeSidebar");
 
-    async () => {
+    if (accountButton && sidebar) {
 
-        await updateSession();
+        accountButton.onclick = () => {
 
-    }
+            sidebar.classList.add("open");
 
-);
+            if (overlay)
+                overlay.classList.add("show");
 
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    async () => {
-
-        await updateSession();
+        };
 
     }
 
-);
+    if (closeButton) {
+
+        closeButton.onclick = () => {
+
+            sidebar.classList.remove("open");
+
+            if (overlay)
+                overlay.classList.remove("show");
+
+        };
+
+    }
+
+    if (overlay) {
+
+        overlay.onclick = () => {
+
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+
+        };
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await updateSession();
+
+    setupSidebar();
+
+});
+
+supabase.auth.onAuthStateChange(() => {
+
+    setTimeout(updateSession, 100);
+
+});

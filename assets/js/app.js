@@ -1,3 +1,5 @@
+import "./auth/session.js";
+
 import { loadHeader } from "./shared/header.js";
 
 loadHeader();

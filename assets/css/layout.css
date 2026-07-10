@@ -77,3 +77,43 @@ footer {
 .sidebar-overlay.show {
     display: block;
 }
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    display: none;
+    z-index: 998;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+#accountSidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    transition: right .3s ease;
+    z-index: 999;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: -4px 0 12px rgba(0,0,0,.2);
+}
+
+#accountSidebar.open {
+    right: 0;
+}
+
+#closeSidebar {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
